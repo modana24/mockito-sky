@@ -3,22 +3,23 @@ package mockito_sky.mockito_sky;
 public class Employee {
     private String nameEmployee;
     private String surnameEmployee;
-    private int idEmployee;
+    private int departmentEmployee;
     private double salaryEmployee;
 
-    public Employee(int idEmployee, String nameEmployee, double salaryEmployee, String surnameEmployee) {
-        this.idEmployee = idEmployee;
+    public Employee(int departmentEmployee, String nameEmployee, String surnameEmployee, double salaryEmployee) {
+        this.departmentEmployee = departmentEmployee;
         this.nameEmployee = nameEmployee;
-        this.salaryEmployee = salaryEmployee;
         this.surnameEmployee = surnameEmployee;
+        this.salaryEmployee = salaryEmployee;
+
     }
 
-    public int getIdEmployee() {
-        return idEmployee;
+    public int getDepartmentEmployee() {
+        return departmentEmployee;
     }
 
-    public void setIdEmployee(int idEmployee) {
-        this.idEmployee = idEmployee;
+    public void setDepartmentEmployee(int departmentEmployee) {
+        this.departmentEmployee = departmentEmployee;
     }
 
     public String getNameEmployee() {
@@ -48,10 +49,14 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "idEmployee=" + idEmployee +
+                "idEmployee=" + departmentEmployee +
                 ", nameEmployee='" + nameEmployee + '\'' +
                 ", surnameEmployee='" + surnameEmployee + '\'' +
                 ", salaryEmployee=" + salaryEmployee +
                 '}';
+    }
+
+    public String getFullName() {
+        return nameEmployee + surnameEmployee;
     }
 }

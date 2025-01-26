@@ -1,13 +1,19 @@
 package mockito_sky.mockito_sky.service;
 
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import mockito_sky.mockito_sky.Employee;
 
-@Service
+import java.util.List;
+import java.util.Map;
 
-public class DepartmentService implements DepartmentServiceImpl {
+public interface DepartmentService {
 
+    List<Employee> getEmployeesByDepartment(int departmentEmployee);
 
+    double getSumSalaryByDepartment(int departmentEmployee);
 
+    double getMaxSalaryByDepartment(int departmentEmployee);
+
+    double getMinSalaryByDepartment(int departmentEmployee);
+
+    Map<Integer, List<Employee>> getEmployeeGroupedByDepartment();
 }
