@@ -5,6 +5,7 @@ import mockito_sky.mockito_sky.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -59,7 +60,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Collection<Employee> findAll() {
-        return  Collection.unmodifiableCollection(employees.values());
+        return Collections.unmodifiableCollection(employees.values());
+    }
+
+    @Override
+    public boolean equals(Object obj, String nameEmployee,
+                          String surnameEmployee) {
+        if (this == obj) return true;
+        if( obj == null || getClass() != obj.getClass() ) return false;
+        Employee other = (Employee) obj;
+        return nameEmployee.equals(other.getNameEmployee()) && surnameEmployee.equals(other.getSurnameEmployee());
     }
 
 }
